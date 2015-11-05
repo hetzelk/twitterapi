@@ -6,11 +6,12 @@ class TwitterBot(object):
         self.argfile = str("lines.txt")
         
         
-        CONSUMER_KEY = keys['consumerkey']
-        CONSUMER_KEY_SECRET = keys['consumerkeysecret']
-        ACCESS_TOKEN = keys['accesstoken']
-        ACCESS_TOKEN_SECRET = keys['accesstokensecret']
+        CONSUMER_KEY = keys['consumer_key']
+        CONSUMER_KEY_SECRET = keys['consumer_secret']
+        ACCESS_TOKEN = keys['access_token']
+        ACCESS_TOKEN_SECRET = keys['access_token_secret']
         auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_KEY_SECRET)
+        auth.secure = True
         auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         self.api = tweepy.API(auth)
 

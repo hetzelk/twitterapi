@@ -28,7 +28,10 @@ class TwitterBot(object):
             self.api.update_status(status = line)
 
 
-		
+    def follow (self):
+        for follower in tweepy.Cursor(self.api.followers).items():
+            follower.follow()
+            print(follower.screen_name)
 
 twit = TwitterBot()
 twit.tweet()

@@ -11,6 +11,7 @@ class TwitterBot(object):
         ACCESS_TOKEN = keys['access_token']
         ACCESS_TOKEN_SECRET = keys['access_token_secret']
         auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_KEY_SECRET)
+        auth.secure = True
         auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         self.api = tweepy.API(auth)
 

@@ -67,6 +67,8 @@ class TwitterBot(object):
     def main(self):
 
         os.system("cls")
+
+        twit = TwitterBot()
         twit.follow()
         counter = 0
 
